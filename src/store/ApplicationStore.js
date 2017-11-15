@@ -1,7 +1,7 @@
-import { EventEmitter } from 'events';
 // import data from '../../public/data.json';
+import BaseStore from 'fluxible/addons/BaseStore';
 
-export default class ApplicationStore extends EventEmitter {
+class ApplicationStore extends BaseStore {
   constructor(dispatcher) {
     super(dispatcher);
     this.dispatcher = dispatcher;
@@ -15,3 +15,7 @@ export default class ApplicationStore extends EventEmitter {
     };
   }
 }
+
+ApplicationStore.storeName = 'ApplicationStore';
+
+export default ApplicationStore
